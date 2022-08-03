@@ -1,5 +1,8 @@
 body{
-    margin: 0
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: lightsteelblue;
 }
 
 .grid{
@@ -14,4 +17,29 @@ body{
 
 .output{
     grid-column: 1/-1;
+    background: black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    font-size: 2rem;
+}
+
+.current-operand{
+    color: yellow;
+}
+
+.previous-operand{
+    color: greenyellow;
+}
+
+.grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 3px solid lightslategray;
+    background-color: white;
+}
+
+.grid > button:hover,
+.grid > button:focus{
+    background-color: lightcyan;
 }
