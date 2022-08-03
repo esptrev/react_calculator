@@ -32,20 +32,20 @@ function App() {
           <button className='spanTwo'>AC</button>
           <button>DEL</button>
           <button>/</button>
-          <DigitsButton digit='1' dispatch={dispatch}>1</DigitsButton>
-          <DigitsButton digit='2' dispatch={dispatch}>2</DigitsButton>
-          <DigitsButton digit='3' dispatch={dispatch}>3</DigitsButton>
-          <DigitsButton digit='*' dispatch={dispatch}>*</DigitsButton>
-          <DigitsButton digit='4' dispatch={dispatch}>4</DigitsButton>
-          <DigitsButton digit='5' dispatch={dispatch}>5</DigitsButton>
-          <DigitsButton digit='6' dispatch={dispatch}>6</DigitsButton>
-          <DigitsButton digit='+' dispatch={dispatch}>+</DigitsButton>
-          <DigitsButton digit='7' dispatch={dispatch}>7</DigitsButton>
-          <DigitsButton digit='8' dispatch={dispatch}>8</DigitsButton>
-          <DigitsButton digit='9' dispatch={dispatch}>9</DigitsButton>
+          <DigitsButton digit='1' dispatch={dispatch}/>
+          <DigitsButton digit='2' dispatch={dispatch}/>>
+          <DigitsButton digit='3' dispatch={dispatch}/>
+          <button>*</button>
+          <DigitsButton digit='4' dispatch={dispatch}/>
+          <DigitsButton digit='5' dispatch={dispatch}/>
+          <DigitsButton digit='6' dispatch={dispatch}/>
+          <button>+</button>
+          <DigitsButton digit='7' dispatch={dispatch}/>
+          <DigitsButton digit='8' dispatch={dispatch}/>
+          <DigitsButton digit='9' dispatch={dispatch}/>
           <button>-</button>
-          <button>.</button>
-        <DigitsButton digit='0' dispatch={dispatch}>0</DigitsButton>
+        <DigitsButton digit='.' dispatch={dispatch}/>
+        <DigitsButton digit='0' dispatch={dispatch}/>
           <button className='spanTwo'>=</button>
       </section>
   );
