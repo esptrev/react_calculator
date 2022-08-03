@@ -8,13 +8,13 @@ export const ACTIONS = {
     CHOOSE_OPERATION: 'choose_operation',
     CLEAR: 'clear',
     DELETE_DIGIT: 'delete_digit',
-    EVALUATE: 'evaluate'
+    EVALUATE: 'evaluate',
 }
 
 function reducer(state, {type, payload}) {
     switch (type) {
         case ACTIONS.ADD_DIGIT:
-            if(payload.digit === 0 && state.currentOperand === '0'){
+            if(payload.digit === '0' && state.currentOperand === '0'){
                 return state
             }
             if(payload.digit === '.' && state.currentOperand.includes('.')) {
@@ -22,11 +22,17 @@ function reducer(state, {type, payload}) {
             }
             return {
                 ...state,
-                currentOperand: `${state.currentOperand || ""} ${payload.digit}`,
+                currentOperand: `${state.currentOperand || ""}${payload.digit}`,
             }
         case ACTIONS.CHOOSE_OPERATION:
             if(state.currentOperand == null && state.previousOperand == null){
                 return state
+            }
+            if(state.currentOperand == null){
+                return {
+                    ...state,
+                    operation: payload.operation,
+                }
             }
             if(state.previousOperand == null){
                 return{
@@ -77,8 +83,10 @@ function App() {
                 <div className='previous-operand'>{previousOperand} {operation}</div>
                 <div className='current-operand'>{currentOperand}</div>
             </div>
-            <button className='spanTwo' onClick={()=> dispatch({ type: ACTIONS.CLEAR})}>AC</button>
-            <button>DEL</button>
+            <button className='spanTwo'
+                    onClick={()=> dispatch({ type: ACTIONS.CLEAR})}>AC</button>
+            <button
+                onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})}>DEL</button>
             <OperationsButton operation='/' dispatch={dispatch}/>
             <DigitsButton digit='1' dispatch={dispatch}/>
             <DigitsButton digit='2' dispatch={dispatch}/>
